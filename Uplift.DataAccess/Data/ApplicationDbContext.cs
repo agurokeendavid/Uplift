@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Uplift.Web.Data
+namespace Uplift.DataAccess.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

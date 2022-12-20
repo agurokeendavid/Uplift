@@ -1,6 +1,8 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Uplift.Web.Models
+namespace Uplift.Models
 {
     public class ErrorViewModel
     {
