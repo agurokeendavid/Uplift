@@ -1,6 +1,10 @@
-﻿namespace Uplift.DataAccess.Data.Repository.IRepository
+﻿using System;
+
+namespace Uplift.DataAccess.Data.Repository.IRepository
 {
-    internal interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
+        ICategoryRepository CategoryRepository { get; }
+        void Save();
     }
 }
