@@ -19,11 +19,20 @@
 
   <ItemGroup>
     <Folder Include="Areas\Customer\Controllers\" />
+    <Folder Include="wwwroot\images\services\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Uplift.DataAccess\Uplift.DataAccess.csproj" />
     <ProjectReference Include="..\Uplift.Models\Uplift.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Admin\Views\Category\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Areas\Admin\Views\Category\Index.cshtml" />
   </ItemGroup>
 
 </Project>

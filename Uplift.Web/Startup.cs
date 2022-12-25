@@ -30,7 +30,7 @@ namespace Uplift.Web
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders()
                 .AddDefaultUI();
-
+            
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddControllersWithViews()
