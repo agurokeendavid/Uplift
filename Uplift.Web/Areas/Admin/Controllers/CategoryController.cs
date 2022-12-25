@@ -18,6 +18,11 @@ namespace Uplift.Web.Areas.Admin.Controllers
             return View();
         }
 
+        public IActionResult Upsert()
+        {
+            return View();
+        }
+
         #region API CALLS
 
         [HttpGet]
