@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using Uplift.DataAccess.Data.Repository.IRepository;
+using Uplift.Models;
 
 namespace Uplift.Web.Areas.Admin.Controllers
 {
@@ -18,9 +20,22 @@ namespace Uplift.Web.Areas.Admin.Controllers
             return View();
         }
 
-        public IActionResult Upsert()
+        public IActionResult Upsert(int? id)
         {
-            return View();
+            Category category = new Category();
+            if (id == null)
+            {
+                return View(category);
+            }
+
+            category = _unitOfWork.CategoryRepository.Get(id.GetValueOrDefault());
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+            
+            return View(category);
         }
 
         #region API CALLS
