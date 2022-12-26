@@ -1,7 +1,12 @@
 ﻿@model Uplift.Models.Category
 
 @{
-    var title = "Create Category";
+    if (Model.Id != 0)
+    {
+        ViewBag.Title = "Update Category";
+    }
+    
+    ViewBag.Title = "Create Category";
     Layout = "_Layout";
 }
 
@@ -11,11 +16,11 @@
         @if (Model.Id != 0)
         {
             <input type="hidden" asp-for="Id"/>
-            title = "Edit Category";
+            
         }
 
         <div class="col-12">
-            <h2 class="text-primary">@title</h2>
+            <h2 class="text-primary">@ViewBag.Title</h2>
             <br>
         </div>
         <div class="col-8">
@@ -44,11 +49,12 @@
                     @if (Model.Id != 0)
                     {
                         // edit button and back to list button
-                        
+                        <partial name="_EditAndBackToListButton" model="Model.Id" />
                     }
                     else
                     {
                         // Create button and back to list button
+                        <partial name="_CreateAndBackToListButton" />
                     }
                 </div>
             </div>
